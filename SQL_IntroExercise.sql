@@ -20,7 +20,7 @@ WHERE Price NOT LIKE 11.99;
 -- find all products and sort them by price from greatest to least
 
 SELECT * FROM products
-ORDER BY Price;
+ORDER BY Price DESC;
 
 -- find all employees who don't have a middle initial
 
@@ -55,6 +55,12 @@ FROM products;
 
 -- find all Geek Squad employees who don't have a middle initial
 
-SELECT 
+SELECT * FROM employees
+WHERE Title LIKE '%Geek%Squad%'
+AND MiddleInitial IS NULL;
 
 -- find all products from the products table whose stock level is in the range -- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
+
+SELECT * FROM products
+WHERE StockLevel BETWEEN 500 AND 1200
+ORDER BY Price;
